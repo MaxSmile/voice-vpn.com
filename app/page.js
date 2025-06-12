@@ -19,7 +19,7 @@ export default function Home() {
           Free, censorship-resistant VPN powered by a simple credit system. No sign-up. No tracking. Built for users who need privacy and unrestricted access worldwide.
         </p>
         <a
-          href="https://voicevpn.top/latest.apk"
+          href="https://apk.voicevpn.top/latest.apk"
           className="mt-4 bg-white text-black px-6 py-3 rounded-full hover:bg-gray-200 transition"
         >
           Download APK
