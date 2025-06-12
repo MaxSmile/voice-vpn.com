@@ -36,7 +36,7 @@ export default function Home() {
           className="underline hover:text-white"
         >
           PAD file
-        </a>
+        </a> &nbsp; v.0.1.0
       </footer>
     </div>
   );
