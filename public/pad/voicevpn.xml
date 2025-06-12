@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PAD>
+  <Program_Info>
+    <Program_Name>Voice VPN</Program_Name>
+    <Program_Version>0.0.0</Program_Version>
+    <Program_Release_Month>00</Program_Release_Month>
+    <Program_Release_Day>00</Program_Release_Day>
+    <Program_Release_Year>2000</Program_Release_Year>
+    <Program_Cost_Dollars>0.00</Program_Cost_Dollars>
+    <Program_Type>Freeware</Program_Type>
+    <Program_Install_Support>Install and Uninstall</Program_Install_Support>
+    <Program_OS_Support>Android</Program_OS_Support>
+    <Program_Language>English</Program_Language>
+    <Program_Change_Info>Initial release</Program_Change_Info>
+  </Program_Info>
+  <Program_Descriptions>
+    <English>
+      <Char_Desc_45>Free VPN with credits, unblock apps globally</Char_Desc_45>
+      <Char_Desc_80>Credit-based free VPN, no signup required</Char_Desc_80>
+      <Char_Desc_250>Voice VPN is a secure, ad-supported VPN with no registration. Earn credits to connect.</Char_Desc_250>
+      <Char_Desc_2000>Voice VPN provides fast, anonymous internet access using a simple credit system. No personal info required, no tracking, no cost. Designed for users in restricted countries and travelers who need reliable, censorship-resistant access to apps and websites.</Char_Desc_2000>
+    </English>
+  </Program_Descriptions>
+  <Program_Info_URLs>
+    <Application_URL>https://vasilkoff.com/voice+vpn</Application_URL>
+    <Download_URL>https://voicevpn.top/latest.apk</Download_URL>
+    <Icon_URL>https://vasilkoff.com/assets/voicevpn/icon.png</Icon_URL>
+    <XML_File_URL>https://voice-vpn.com/pad/voicevpn.xml</XML_File_URL>
+  </Program_Info_URLs>
+  <Company_Info>
+    <Company_Name>Vasilkoff Ltd</Company_Name>
+    <City>London</City>
+    <Zip_Postal_Code>W1D</Zip_Postal_Code>
+    <Country_UK>United Kingdom</Country_UK>
+    <Company_WebSite_URL>https://vasilkoff.com</Company_WebSite_URL>
+    <Contact_Info_Email>support@vasilkoff.com</Contact_Info_Email>
+  </Company_Info>
+  <Permissions>
+    <Requires_Internet>Yes</Requires_Internet>
+    <Tracks_Users>No</Tracks_Users>
+    <Collects_Personal_Info>No</Collects_Personal_Info>
+    <Ad_Supported>Yes</Ad_Supported>
+  </Permissions>
+</PAD>
