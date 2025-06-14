@@ -22,11 +22,15 @@ export default function Home() {
           href="https://apk.voicevpn.top/latest.apk"
           className="mt-4 bg-white text-black px-6 py-3 rounded-full hover:bg-gray-200 transition"
         >
-          Download APK
+          Download Latest APK
         </a>
         <p className="text-xs text-gray-400 mt-2">
           Latest version: served directly from our own infrastructure.
         </p>
+        <div className="flex gap-4">
+          <a href='https://voice-vpn-fast-vpn-free.en.uptodown.com/android' title='Download Voice VPN - Fast VPN (Free)' >
+            <img src='https://stc.utdstc.com/img/mediakit/download-aao-big.png' alt='Download Voice VPN - Fast VPN (Free)' /></a>
+        </div>
       </main>
 
       <footer className="row-start-3 text-xs text-gray-500 text-center">
