@@ -8,8 +8,8 @@ export default function Home() {
     >
       <main className="flex flex-col items-center text-center gap-6 row-start-2 max-w-xl">
         <Image
-          src="/logo.webp"
-          alt="Voice VPN logo"
+          src="/voice-vpn.svg"
+          alt="Voice VPN app"
           width={100}
           height={100}
           priority
