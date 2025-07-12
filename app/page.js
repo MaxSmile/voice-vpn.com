@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Footer from "./_components/Footer";
 
 export default function Home() {
   return (
@@ -33,15 +34,7 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className="row-start-3 text-xs text-gray-500 text-center">
-        © {new Date().getFullYear()} Vasilkoff Ltd.{' '}
-        <a
-          href="/pad/voicevpn.xml"
-          className="underline hover:text-white"
-        >
-          PAD file
-        </a> &nbsp; v.0.1.0
-      </footer>
+      <Footer />
     </div>
   );
 }

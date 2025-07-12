@@ -3,49 +3,30 @@
     "version": "2.4.3+243",
     "date": "2025-07-12",
     "apk": "https://apk.voicevpn.top/voicevpn-2.4.3+243.apk",
-    "notes": "Polishing UI"
+    "notes": "Improved UI responsiveness and usability. Minor refinements to layout and interaction."
   },
   {
     "version": "2.3.9+239",
     "date": "2025-06-30",
     "apk": "https://apk.voicevpn.top/voicevpn-2.3.9+239.apk",
-    "notes": "Polishing UI"
+    "notes": "Minor visual improvements and cleaner onboarding experience."
   },
   {
     "version": "2.3.8+238",
     "date": "2025-06-19",
     "apk": "https://apk.voicevpn.top/voicevpn-2.3.8+238.apk",
-    "notes": "Polishing UI"
+    "notes": "Tweaked UI elements for smoother navigation and consistency."
   },
   {
     "version": "2.3.7+237",
     "date": "2025-06-14",
     "apk": "https://apk.voicevpn.top/voicevpn-2.3.7+237.apk",
-    "notes": "Polishing UI"
+    "notes": "Refined layout, optimized interactions on lower-end devices."
   },
   {
     "version": "2.3.6+236",
     "date": "2025-06-12",
-    "apk": "https://apk.voicevpn.top/voicevpn-2.3.6+236.apk"
-  },
-  {
-    "version": "2.3.6+236",
-    "date": "2025-06-12",
-    "apk": "https://apk.voicevpn.top/voicevpn-2.3.6+236.apk"
-  },
-  {
-    "version": "2.3.6+236",
-    "date": "2025-06-12",
-    "apk": "https://apk.voicevpn.top/voicevpn-2.3.6+236.apk"
-  },
-  {
-    "version": "2.3.6+236",
-    "date": "2025-06-12",
-    "apk": "https://apk.voicevpn.top/voicevpn-2.3.6+236.apk"
-  },
-  {
-    "version": "2.3.6+236",
-    "date": "2025-06-12",
-    "apk": "https://apk.voicevpn.top/voicevpn-2.3.6+236.apk"
+    "apk": "https://apk.voicevpn.top/voicevpn-2.3.6+236.apk",
+    "notes": "Internal updates for stability. Prepared groundwork for upcoming features."
   }
 ]
