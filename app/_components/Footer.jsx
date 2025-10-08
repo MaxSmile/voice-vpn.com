@@ -1,4 +1,4 @@
-
+// app/_components/Footer.jsx
 
 export default function Footer() {
     return (<footer className="row-start-3 text-xs text-gray-200 text-center width-full">

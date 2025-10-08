@@ -2,16 +2,17 @@
 <PAD>
   <Program_Info>
     <Program_Name>Voice VPN</Program_Name>
-    <Program_Version>0.0.0</Program_Version>
-    <Program_Release_Month>00</Program_Release_Month>
-    <Program_Release_Day>00</Program_Release_Day>
-    <Program_Release_Year>2000</Program_Release_Year>
-    <Program_Cost_Dollars>0.00</Program_Cost_Dollars>
+    <Program_Version>2.5.0</Program_Version>
+    <Program_Release_Month>09</Program_Release_Month>
+    <Program_Release_Day>24</Program_Release_Day>
+    <Program_Release_Year>2025</Program_Release_Year>
+    <Program_Cost_Dollars>0</Program_Cost_Dollars>
     <Program_Type>Freeware</Program_Type>
-    <Program_Install_Support>Install and Uninstall</Program_Install_Support>
+    <Program_Install_Support>Full install and uninstall support</Program_Install_Support>
     <Program_OS_Support>Android</Program_OS_Support>
     <Program_Language>English</Program_Language>
-    <Program_Change_Info>Initial release</Program_Change_Info>
+    <Program_Change_Info>Updated censorship bypass algorithms and routes. Improved performance and made the app more fun to use.</Program_Change_Info>
+
   </Program_Info>
   <Program_Descriptions>
     <English>
@@ -21,16 +22,16 @@
       <Char_Desc_2000>Voice VPN provides fast, anonymous internet access using a simple credit system. No personal info required, no tracking, no cost. Designed for users in restricted countries and travelers who need reliable, censorship-resistant access to apps and websites.</Char_Desc_2000>
     </English>
   </Program_Descriptions>
-  <Program_Info_URLs>
+    <Program_Info_URLs>
     <Application_URL>https://vasilkoff.com/voice+vpn</Application_URL>
-    <Download_URL>https://voicevpn.top/latest.apk</Download_URL>
-    <Icon_URL>https://vasilkoff.com/assets/voicevpn/icon.png</Icon_URL>
+    <Download_URL>https://apk.voicevpn.top/latest.apk</Download_URL>
+    <Icon_URL>https://voice-vpn.com/Voice-VPN-1024x1024.png</Icon_URL>
     <XML_File_URL>https://voice-vpn.com/pad/voicevpn.xml</XML_File_URL>
   </Program_Info_URLs>
   <Company_Info>
     <Company_Name>Vasilkoff Ltd</Company_Name>
     <City>London</City>
-    <Zip_Postal_Code>W1D</Zip_Postal_Code>
+    <Zip_Postal_Code>N1 7GU</Zip_Postal_Code>
     <Country_UK>United Kingdom</Country_UK>
     <Company_WebSite_URL>https://vasilkoff.com</Company_WebSite_URL>
     <Contact_Info_Email>support@vasilkoff.com</Contact_Info_Email>
