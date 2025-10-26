@@ -20,7 +20,7 @@
 
   <Program_Info>
     <Program_Name>Voice VPN - Fast VPN</Program_Name>
-    <Program_Version>2.5.7</Program_Version>
+    <Program_Version>2.5.8</Program_Version>
     <Program_Release_Month>10</Program_Release_Month>
     <Program_Release_Day>26</Program_Release_Day>
     <Program_Release_Year>2025</Program_Release_Year>
@@ -36,7 +36,7 @@
       <Application_Icon_URL>https://vasilkoff.com/voice-vpn/icon.png</Application_Icon_URL>
     </Application_URLs>
     <Download_URLs>
-      <Primary_Download_URL>https://apk.voicevpn.top/voicevpn-2.5.5+255.apk</Primary_Download_URL>
+      <Primary_Download_URL>https://apk.voicevpn.top/latest.apk</Primary_Download_URL>
     </Download_URLs>
   </Web_Info>
 
