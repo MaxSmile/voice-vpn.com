@@ -1,5 +1,11 @@
 [
   {
+    "version": "3.0.0+300",
+    "date": "2025-12-03",
+    "apk": "https://apk.voicevpn.top/voicevpn-3.0.0+300.apk",
+    "notes": "Stability improvements and minor bug fixes.\nOptimized connection handling for smoother sessions.\nSmall UI refinements for clearer status and controls."
+  },
+  {
     "version": "2.6.8+268",
     "date": "2025-11-11",
     "apk": "https://apk.voicevpn.top/voicevpn-2.6.8+268.apk",
