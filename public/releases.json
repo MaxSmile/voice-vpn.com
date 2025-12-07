@@ -1,5 +1,11 @@
 [
   {
+    "version": "3.0.1+301",
+    "date": "2025-12-08",
+    "apk": "https://apk.voicevpn.top/voicevpn-3.0.1+301.apk",
+    "notes": "• Improved connection stability for remote servers.\n• Enhanced UI for easier navigation and user experience.\n• Optimized performance for faster VPN setup and data transfer."
+  },
+  {
     "version": "3.0.0+300",
     "date": "2025-12-03",
     "apk": "https://apk.voicevpn.top/voicevpn-3.0.0+300.apk",
