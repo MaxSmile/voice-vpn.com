@@ -48,7 +48,7 @@ Some external links missing `rel="noopener noreferrer"` attribute:
 
 ## Code Quality Issues
 
-### 4. Wrong Component Import/Filename
+### 4. Wrong Component Import/Filename - RefFAQ
 **Severity:** High  
 **Type:** Bug  
 **Location:** `app/_components/sections/RefFAQ.jsx`
@@ -67,6 +67,23 @@ export default function RefFAQ({
 ```
 
 **Impact:** This inconsistency creates confusion and could lead to bugs.
+
+### 4b. Completely Wrong Component Content - RefRelated
+**Severity:** Critical  
+**Type:** Bug  
+**Location:** `app/_components/sections/RefRelated.jsx`
+
+The RefRelated.jsx file contains a complete duplicate of the RefLeaderboard component code instead of its own implementation. The file comment even says "RefLeaderboard" on line 1.
+
+**Current state:**
+```jsx
+// app/_components/sections/RefLeaderboard.jsx (WRONG - this is RefRelated.jsx!)
+export default function RefLeaderboard({
+```
+
+**Impact:** The RefRelated component is completely non-functional. Any page trying to use it will display a leaderboard instead of related content. This is imported in `app/r/[refId]/page.jsx` line 13 and used on line 191.
+
+**Fix:** Implement the actual RefRelated component or remove it if not needed.
 
 ### 5. Duplicate Release Entries
 **Severity:** Medium  
@@ -526,22 +543,47 @@ Client components might log errors or warnings in production. Need to verify con
 
 **Recommendation:** Add eslint rules to prevent console.log in production code.
 
+### 44. Manifest.json Missing Start URL
+**Severity:** Low  
+**Type:** PWA  
+**Location:** `app/manifest.json`
+
+The web app manifest is missing the `start_url` field, which defines where the app should start when launched from the home screen.
+
+**Fix:** Add start_url to manifest:
+```json
+{
+  "start_url": "/",
+  // ... rest of manifest
+}
+```
+
+### 45. Manifest Name Inconsistency
+**Severity:** Low  
+**Type:** Branding  
+**Location:** `app/manifest.json`
+
+The manifest uses "Voice-VPN" (with hyphen) while other parts of the codebase use "Voice VPN" (with space).
+
+**Fix:** Standardize the name across all locations.
+
 ## Summary Statistics
 
-- **Critical Issues:** 1
+- **Critical Issues:** 2 (Next.js vulnerabilities, RefRelated wrong content)
 - **High Severity:** 4
 - **Medium Severity:** 19
-- **Low Severity:** 19
+- **Low Severity:** 20
 
-**Total Issues Identified:** 43
+**Total Issues Identified:** 45
 
 ## Priority Recommendations
 
 ### Immediate Action Required:
 1. **Issue #1:** Update Next.js to fix critical security vulnerabilities
-2. **Issue #4:** Fix RefFAQ component naming inconsistency
-3. **Issue #11:** Add missing Google Play badge image
-4. **Issue #19:** Add Privacy Policy and Terms of Service
+2. **Issue #4b:** Fix RefRelated.jsx - currently contains duplicate RefLeaderboard code
+3. **Issue #4:** Fix RefFAQ component naming inconsistency (RefRAQ → RefFAQ)
+4. **Issue #11:** Add missing Google Play badge image
+5. **Issue #19:** Add Privacy Policy and Terms of Service
 
 ### Short-term Improvements:
 5. **Issue #8:** Sync version numbers across codebase
