@@ -18,17 +18,17 @@ export default function DeviceDownloadSection() {
             <div className="flex flex-wrap items-center gap-3">
               <a
                 href="https://play.google.com/store/apps/details?id=com.fast.voicevpn"
-                target="_blank" rel="noopener"
+                target="_blank" rel="noopener noreferrer"
               >
                 <img
-                  src="/GetItOnGooglePlay_Badge_Web_color_English.png"
+                  src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
                   alt="Get it on Google Play"
                   className="h-10"
                 />
               </a>
               <a
                 href="https://voice-vpn-fast-vpn-free.en.uptodown.com/android"
-                target="_blank" rel="noopener"
+                target="_blank" rel="noopener noreferrer"
               >
                 <img
                   src="https://stc.utdstc.com/img/mediakit/download-aao-big.png"

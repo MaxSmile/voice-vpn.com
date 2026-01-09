@@ -15,7 +15,7 @@ export default function Header() {
             Latest version: served directly from our own infrastructure.
         </p>
         <div className="flex gap-4 justify-center mt-4">
-            <a href='https://voice-vpn-fast-vpn-free.en.uptodown.com/android' title='Download Voice VPN - Fast VPN (Free)' >
+            <a href='https://voice-vpn-fast-vpn-free.en.uptodown.com/android' title='Download Voice VPN - Fast VPN (Free)' target="_blank" rel="noopener noreferrer">
                 <img src='https://stc.utdstc.com/img/mediakit/download-aao-big.png' alt='Download Voice VPN - Fast VPN (Free)' /></a>
         </div>
     </header>

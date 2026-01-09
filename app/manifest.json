@@ -1,6 +1,7 @@
 {
-  "name": "Voice-VPN",
-  "short_name": "Voice-VPN",
+  "name": "Voice VPN",
+  "short_name": "Voice VPN",
+  "start_url": "/",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
