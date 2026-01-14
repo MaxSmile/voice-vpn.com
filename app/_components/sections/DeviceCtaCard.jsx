@@ -90,7 +90,7 @@ export default function DeviceCtaCard({
               <a
                 href={playUrl}
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-full bg-white/10 text-white px-5 py-2.5 text-sm font-medium hover:bg-white/20 ring-1 ring-white/15 transition"
               >
                 Google Play
@@ -104,7 +104,7 @@ export default function DeviceCtaCard({
               <a
                 href={uptodownUrl}
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-full bg-white/10 text-white px-5 py-2.5 text-sm font-medium hover:bg-white/20 ring-1 ring-white/15 transition"
               >
                 Uptodown
@@ -134,7 +134,7 @@ export default function DeviceCtaCard({
               <a
                 href={playUrl}
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-full bg-white text-black px-5 py-2.5 text-sm font-medium hover:bg-gray-200 transition"
               >
                 Google Play
@@ -148,7 +148,7 @@ export default function DeviceCtaCard({
               <a
                 href={uptodownUrl}
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-full bg-white/10 text-white px-5 py-2.5 text-sm font-medium hover:bg-white/20 ring-1 ring-white/15 transition"
               >
                 Uptodown

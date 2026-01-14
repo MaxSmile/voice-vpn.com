@@ -1,109 +1,85 @@
-// app/_components/sections/RefLeaderboard.jsx
-'use client';
-
-import { useEffect, useMemo, useState } from 'react';
+// app/_components/sections/RefRelated.jsx
 
 /**
- * RefLeaderboard — privacy-safe ambassador crosslinks.
+ * Referral cross-links shown below the leaderboard.
  *
  * Props:
- *  - region?: string            // e.g. "ae" | "global"
- *  - currentRefId?: string      // to hide the current page from the list
- *  - items?: Array<{ href:string, alias:string, avatarUrl?:string, badges?:string[] }>
- *      If provided, component will NOT fetch.
- *  - limit?: number             // default 6
- *  - title?: string             // default "Top ambassadors"
- *  - apiBase?: string           // default env or https://ref-data.voice-vpn.com
+ *  - items: Array<{ href?: string, title?: string, alias?: string, subtitle?: string, description?: string, note?: string, avatarUrl?: string, badges?: string[], tags?: string[], region?: string }>
+ *  - currentRefId?: string     // used to omit the current page if links include it
+ *  - limit?: number            // default 6
+ *  - title?: string            // section title
+ *  - description?: string      // helper copy under the title
  *  - className?: string
  */
-export default function RefLeaderboard({
-  region = 'global',
+export default function RefRelated({
+  items = [],
   currentRefId,
-  items,
   limit = 6,
-  title = 'Top ambassadors',
-  apiBase = process.env.NEXT_PUBLIC_REF_API_BASE || 'https://ref-data.voice-vpn.com',
+  title = 'Related invites',
+  description = 'Discover other ambassadors and nearby offers.',
   className = '',
 }) {
-  const [data, setData] = useState(null);
-  const [err, setErr] = useState('');
-  const shouldFetch = !items;
+  const list = (items || [])
+    .filter(Boolean)
+    .filter((item) => {
+      if (!currentRefId || !item.href) return true;
+      const href = item.href.toLowerCase();
+      return !href.endsWith(`/${currentRefId}`) && !href.includes(`ref=${currentRefId.toLowerCase()}`);
+    })
+    .slice(0, limit);
 
-  useEffect(() => {
-    if (!shouldFetch) return;
-    let on = true;
-    const url = `${apiBase}/v1/leaderboard?region=${encodeURIComponent(region)}&limit=${limit}`;
-    fetch(url, { cache: 'no-store' })
-      .then(async (r) => {
-        if (!r.ok) throw new Error(`HTTP ${r.status}`);
-        const j = await r.json();
-        if (on) setData(j);
-      })
-      .catch((e) => on && setErr(e.message || 'Failed to load'));
-    return () => {
-      on = false;
-    };
-  }, [apiBase, limit, region, shouldFetch]);
-
-  const list = useMemo(() => {
-    const src = items || data?.items || [];
-    return src
-      .filter((it) => (currentRefId ? !it.href.endsWith(`/${currentRefId}`) : true))
-      .slice(0, limit);
-  }, [items, data, limit, currentRefId]);
-
-  if (err) {
+  if (list.length === 0) {
     return (
       <section className={`bg-white/5 border border-white/10 rounded-2xl p-5 ${className}`}>
         <h2 className="text-lg sm:text-xl font-semibold text-white">{title}</h2>
-        <p className="mt-2 text-sm text-gray-400">Couldn’t load leaderboard.</p>
+        <p className="mt-2 text-sm text-gray-400">No related invites yet.</p>
       </section>
     );
   }
 
-  const isLoading = shouldFetch && !data;
-
   return (
     <section className={`bg-white/5 border border-white/10 rounded-2xl p-5 ${className}`}>
-      <div className="flex items-center justify-between">
-        <h2 className="text-lg sm:text-xl font-semibold text-white">{title}</h2>
-        <span className="text-xs text-gray-400">{region === 'global' ? 'Global' : region.toUpperCase()}</span>
+      <div className="flex items-start justify-between gap-3">
+        <div>
+          <h2 className="text-lg sm:text-xl font-semibold text-white">{title}</h2>
+          <p className="mt-1 text-sm text-gray-400">{description}</p>
+        </div>
       </div>
 
-      {isLoading ? (
-        <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {Array.from({ length: limit }).map((_, i) => (
-            <div key={i} className="animate-pulse bg-white/5 rounded-xl p-4 h-24 border border-white/10" />
-          ))}
-        </div>
-      ) : list.length === 0 ? (
-        <p className="mt-3 text-sm text-gray-400">No ambassadors to show yet.</p>
-      ) : (
-        <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {list.map((it, idx) => (
+      <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {list.map((item, idx) => {
+          const name = item.title || item.alias || 'Invite';
+          const subtitle = item.subtitle || item.description || item.note || item.region;
+          const badges = item.badges || item.tags;
+          return (
             <a
               key={idx}
-              href={it.href}
-              className="group flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/10 transition"
+              href={item.href || '#'}
+              className="group flex items-start gap-3 rounded-xl bg-white/5 border border-white/10 p-4 hover:bg-white/10 transition"
             >
-              <img
-                src={
-                  it.avatarUrl ||
-                  // fallback identicon via gravatar on alias hash-ish (not PII critical here since alias is public)
-                  `https://www.gravatar.com/avatar/${encodeURIComponent(
-                    (it.alias || 'anon').toLowerCase()
-                  )}?d=identicon&s=80`
-                }
-                alt={it.alias || 'member'}
-                width={40}
-                height={40}
-                className="rounded-lg ring-1 ring-white/10"
-              />
+              <div className="h-11 w-11 rounded-lg ring-1 ring-white/10 overflow-hidden bg-white/5 flex items-center justify-center text-sm font-semibold text-white/80 shrink-0">
+                {item.avatarUrl ? (
+                  <img
+                    src={item.avatarUrl}
+                    alt={name}
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                ) : (
+                  <span aria-hidden>{name.slice(0, 1).toUpperCase()}</span>
+                )}
+              </div>
+
               <div className="min-w-0">
-                <div className="text-sm font-medium text-white truncate">{it.alias || 'Member'}</div>
-                {it.badges?.length ? (
-                  <div className="mt-1 flex flex-wrap gap-1">
-                    {it.badges.slice(0, 2).map((b, i) => (
+                <div className="text-sm font-medium text-white truncate">{name}</div>
+                {subtitle ? (
+                  <div className="mt-1 text-xs text-gray-400 overflow-hidden text-ellipsis">{subtitle}</div>
+                ) : (
+                  <div className="mt-1 text-xs text-gray-400">Trusted invite</div>
+                )}
+                {badges?.length ? (
+                  <div className="mt-2 flex flex-wrap gap-1">
+                    {badges.slice(0, 3).map((b, i) => (
                       <span
                         key={i}
                         className="text-[10px] px-1.5 py-0.5 rounded-full bg-white/5 ring-1 ring-white/10 text-white/80"
@@ -112,14 +88,12 @@ export default function RefLeaderboard({
                       </span>
                     ))}
                   </div>
-                ) : (
-                  <div className="mt-1 text-[11px] text-gray-400">Ambassador</div>
-                )}
+                ) : null}
               </div>
             </a>
-          ))}
-        </div>
-      )}
+          );
+        })}
+      </div>
     </section>
   );
 }

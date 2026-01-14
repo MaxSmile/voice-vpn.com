@@ -4,119 +4,11 @@ This document contains a comprehensive list of bugs, mistakes, and potential imp
 
 ## Security Issues
 
-### 1. Critical Security Vulnerabilities in Next.js Dependency
-**Severity:** Critical  
-**Type:** Security  
-**Location:** `package.json`
-
-The project uses Next.js version `15.3.3` which has multiple critical security vulnerabilities:
-- Cache Key Confusion for Image Optimization API Routes (GHSA-g5qg-72qw-gw5v)
-- Content Injection Vulnerability for Image Optimization (GHSA-xv57-4mr9-wg8v)
-- Improper Middleware Redirect Handling Leads to SSRF (GHSA-4342-x723-ch2f)
-- RCE in React flight protocol (GHSA-9qr9-h5gf-34mp)
-- Server Actions Source Code Exposure (GHSA-w37m-7fhw-fmv9)
-- Denial of Service with Server Components (GHSA-mwv6-3258-q52c)
-
-**Fix:** Update Next.js to version 15.5.9 or later:
-```json
-"dependencies": {
-  "next": "^15.5.9"
-}
-```
-
-### 2. Missing Image Security Attributes
-**Severity:** Medium  
-**Type:** Security  
-**Location:** Multiple files
-
-Several `<img>` tags use external sources without proper security attributes:
-- `app/_components/Header.jsx` (line 19): Uptodown badge
-- `app/page.jsx` (line 33): Uptodown badge
-- `app/_components/sections/DeviceDownloadSection.jsx` (lines 24, 34, 57)
-
-**Fix:** Add `rel="noopener noreferrer"` when images are loaded from external sources, or use Next.js `<Image>` component for better security and performance.
-
-### 3. Unsafe External Link Practices
-**Severity:** Low  
-**Type:** Security  
-**Location:** Multiple files
-
-Some external links missing `rel="noopener noreferrer"` attribute:
-- `app/_components/sections/DeviceCtaCard.jsx`: Lines 80, 94, 123, 139
-
-**Fix:** Add `rel="noopener noreferrer"` to all external links for security.
-
 ## Code Quality Issues
-
-### 4. Wrong Component Import/Filename - RefFAQ
-**Severity:** High  
-**Type:** Bug  
-**Location:** `app/_components/sections/RefFAQ.jsx`
-
-The component is named `RefRAQ` instead of `RefFAQ` in the file content (line 12), but the filename is `RefFAQ.jsx` and it's imported as `RefFAQ` in `app/r/[refId]/page.jsx`.
-
-**Current state:**
-```jsx
-// app/_components/sections/RefRAQ.jsx (line 12)
-export default function RefRAQ({
-```
-
-**Expected:**
-```jsx
-export default function RefFAQ({
-```
-
-**Impact:** This inconsistency creates confusion and could lead to bugs.
-
-### 4b. Completely Wrong Component Content - RefRelated
-**Severity:** Critical  
-**Type:** Bug  
-**Location:** `app/_components/sections/RefRelated.jsx`
-
-The RefRelated.jsx file contains a complete duplicate of the RefLeaderboard component code instead of its own implementation. The file comment even says "RefLeaderboard" on line 1.
-
-**Current state:**
-```jsx
-// app/_components/sections/RefLeaderboard.jsx (WRONG - this is RefRelated.jsx!)
-export default function RefLeaderboard({
-```
-
-**Impact:** The RefRelated component is completely non-functional. Any page trying to use it will display a leaderboard instead of related content. This is imported in `app/r/[refId]/page.jsx` line 13 and used on line 191.
-
-**Fix:** Implement the actual RefRelated component or remove it if not needed.
-
-### 5. Duplicate Release Entries
-**Severity:** Medium  
-**Type:** Data Quality  
-**Location:** `public/releases.json`
-
-Version `2.3.6+236` is duplicated 5 times (lines 111-134) with identical information.
-
-**Fix:** Remove duplicate entries, keeping only one instance of version 2.3.6+236.
-
-### 6. Inconsistent Linting Configuration
-**Severity:** Medium  
-**Type:** Configuration  
-**Location:** Project root
-
-The project was missing ESLint configuration and doesn't have TypeScript installed, despite TypeScript being a peer dependency of the linting tools.
-
-**Fix:** Either:
-1. Install TypeScript as a dev dependency if TypeScript support is desired
-2. Or adjust ESLint configuration to not require TypeScript
-
-### 7. Mixed Package Managers
-**Severity:** Low  
-**Type:** Configuration  
-**Location:** Project root
-
-The project has both `package-lock.json` and `yarn.lock` files, which can cause dependency resolution inconsistencies.
-
-**Fix:** Choose one package manager (npm or yarn) and remove the other lock file. Add the removed lock file to `.gitignore`.
 
 ## Functionality Issues
 
-### 8. Version Number Mismatch
+### 3. Version Number Mismatch
 **Severity:** Medium  
 **Type:** Consistency  
 **Location:** Multiple files
@@ -128,7 +20,7 @@ The version number is inconsistent across the codebase:
 
 **Fix:** Sync version numbers across all locations and use a single source of truth. Also fix the impossible future dates in releases.json (e.g., 2025-12-09 when current date is 2026-01-08).
 
-### 9. Incorrect Future Dates in Release History
+### 4. Incorrect Future Dates in Release History
 **Severity:** Medium  
 **Type:** Data Error  
 **Location:** `public/releases.json`
@@ -139,7 +31,7 @@ Release dates show 2025 dates when the current year is 2026. This suggests eithe
 
 **Fix:** Update all dates to reflect actual release dates.
 
-### 10. Missing Voice VPN SVG File
+### 5. Missing Voice VPN SVG File
 **Severity:** High  
 **Type:** Missing Asset  
 **Location:** `app/page.jsx` (line 12)
@@ -148,7 +40,7 @@ The home page references `/voice-vpn.svg` which exists in the public folder, but
 
 **Verification Needed:** Test that the image loads correctly.
 
-### 11. Missing Google Play Badge Image
+### 6. Missing Google Play Badge Image
 **Severity:** Medium  
 **Type:** Missing Asset  
 **Location:** `app/_components/sections/DeviceDownloadSection.jsx` (line 24)
@@ -157,7 +49,7 @@ References `/GetItOnGooglePlay_Badge_Web_color_English.png` which doesn't exist 
 
 **Fix:** Add the missing Google Play badge image or update the path to use a CDN URL.
 
-### 12. Placeholder Referral Page
+### 7. Placeholder Referral Page
 **Severity:** Medium  
 **Type:** Incomplete Feature  
 **Location:** `app/r/page.jsx`
@@ -168,14 +60,14 @@ The `/r` route page is a placeholder with only a comment (lines 5-6) indicating 
 
 ## User Experience Issues
 
-### 13. Duplicate Download Sections
-**Severity:** Medium  
+### 8. Duplicate Download Sections
+**Severity:** Low (reviewed)  
 **Type:** UX  
 **Location:** `app/page.jsx` and `app/_components/Header.jsx`
 
-Both the main page and the header display very similar download buttons and Uptodown badges, creating redundancy.
+Current state: header shows a single sticky “Download APK” CTA; the hero has primary/secondary CTAs plus an Uptodown badge. This is typical (persistent nav CTA + main hero CTA) and not harmful.
 
-**Fix:** Consider removing duplication or differentiating the CTAs (e.g., header could be minimal, main content more detailed).
+**Action:** No change needed unless you want to further differentiate the header CTA styling/copy.
 
 ### 14. Non-functional iOS/Desktop Features
 **Severity:** Low  
@@ -569,17 +461,17 @@ The manifest uses "Voice-VPN" (with hyphen) while other parts of the codebase us
 
 ## Summary Statistics
 
-- **Critical Issues:** 2 (Next.js vulnerabilities, RefRelated wrong content)
+- **Critical Issues:** 1 (RefRelated wrong content)
 - **High Severity:** 4
 - **Medium Severity:** 19
 - **Low Severity:** 21
 
-**Total Issues Identified:** 46
+**Total Issues Identified:** 45
 
 ## Priority Recommendations
 
 ### Immediate Action Required:
-1. **Issue #1:** Update Next.js to fix critical security vulnerabilities
+
 2. **Issue #4b:** Fix RefRelated.jsx - currently contains duplicate RefLeaderboard code
 3. **Issue #4:** Fix RefFAQ component naming inconsistency (RefRAQ → RefFAQ)
 4. **Issue #11:** Add missing Google Play badge image

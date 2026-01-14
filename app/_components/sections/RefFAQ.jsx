@@ -1,4 +1,4 @@
-// app/_components/sections/RefRAQ.jsx
+// app/_components/sections/RefFAQ.jsx
 'use client';
 
 /**
@@ -9,7 +9,7 @@
  *  - className?: string
  *  - generateJsonLd?: boolean  // if true, embeds FAQPage JSON-LD for this block
  */
-export default function RefRAQ({
+export default function RefFAQ({
   items = [],
   title = 'FAQ',
   className = '',
@@ -93,4 +93,3 @@ export default function RefRAQ({
     </section>
   );
 }
-
