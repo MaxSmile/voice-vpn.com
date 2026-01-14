@@ -1,23 +1,133 @@
-// app/_components/Header.jsx
+"use client";
+
+import Link from "next/link";
+import Image from "next/image";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import DownloadLink from "./utils/DownloadLink";
+
 export default function Header() {
-    return (<header className="row-start-1 text-center py-6">
-        <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">Voice VPN</h1>
-        <p className="text-sm sm:text-base text-gray-300 max-w-lg mx-auto mt-2">
-            Free, censorship-resistant VPN powered by a simple credit system. No sign-up. No tracking. Built for users who need privacy and unrestricted access worldwide.
-        </p>
-        <a
-            href="https://apk.voicevpn.top/latest.apk"
-            className="mt-4 bg-white text-black px-6 py-3 rounded-full hover:bg-gray-200 transition inline-block"
-        >
-            Download Latest APK
-        </a>
-        <p className="text-xs text-gray-400 mt-2">
-            Latest version: served directly from our own infrastructure.
-        </p>
-        <div className="flex gap-4 justify-center mt-4">
-            <a href='https://voice-vpn-fast-vpn-free.en.uptodown.com/android' title='Download Voice VPN - Fast VPN (Free)' >
-                <img src='https://stc.utdstc.com/img/mediakit/download-aao-big.png' alt='Download Voice VPN - Fast VPN (Free)' /></a>
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <nav className="w-full py-4 px-6 sm:px-8 border-b border-white/5 bg-[#0B1426]/80 backdrop-blur-md sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto flex items-center justify-between">
+        {/* Logo Left */}
+        <Link href="/" className="flex items-center gap-2 group z-50 relative">
+          <Image
+            src="/voice-vpn.svg"
+            alt="Voice VPN Logo"
+            width={32}
+            height={32}
+            className="w-8 h-8 transition-transform group-hover:scale-110"
+          />
+          <span className="text-xl font-bold text-white tracking-tight">
+            Voice<span className="text-[var(--brand-cyan)]">VPN</span>
+          </span>
+        </Link>
+
+        {/* Desktop Navigation Center */}
+        <div className="hidden md:flex items-center gap-8 text-sm font-medium text-[var(--brand-gray)]">
+          <Link href="/" className="hover:text-white transition-colors">Home</Link>
+          <Link href="/features" className="hover:text-white transition-colors">Features</Link>
+          <Link href="/faq" className="hover:text-white transition-colors">FAQ</Link>
+          <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>
+          <a href="/pad/voicevpn.xml" className="hover:text-white transition-colors">PAD</a>
         </div>
-    </header>
-    )
+
+        {/* Desktop CTA Right */}
+        <div className="hidden md:flex items-center gap-4">
+          <DownloadLink
+            className="px-5 py-2 rounded-full text-sm font-semibold bg-[var(--brand-cyan)] text-white hover:bg-opacity-90 transition-all shadow-[0_0_20px_-5px_rgba(33,169,247,0.5)] hover:shadow-[0_0_25px_-5px_rgba(33,169,247,0.7)]"
+          >
+            Download APK
+          </DownloadLink>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="md:hidden z-50 relative p-2 text-white/80 hover:text-white focus:outline-none"
+          aria-label="Toggle menu"
+        >
+          <div className="w-6 h-6 flex flex-col justify-center gap-1.5">
+            <span
+              className={`block w-full h-0.5 bg-current transition-transform duration-300 ${
+                isOpen ? "rotate-45 translate-y-2" : ""
+              }`}
+            />
+            <span
+              className={`block w-full h-0.5 bg-current transition-opacity duration-300 ${
+                isOpen ? "opacity-0" : ""
+              }`}
+            />
+            <span
+              className={`block w-full h-0.5 bg-current transition-transform duration-300 ${
+                isOpen ? "-rotate-45 -translate-y-2" : ""
+              }`}
+            />
+          </div>
+        </button>
+
+        {/* Mobile Menu Overlay */}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="absolute top-0 left-0 w-full h-screen bg-[#0B1426] flex flex-col items-center justify-center gap-8 md:hidden z-40"
+            >
+              <div className="flex flex-col items-center gap-6 text-xl font-medium text-[var(--brand-gray)]">
+                <Link
+                  href="/"
+                  className="hover:text-white transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Home
+                </Link>
+                <Link
+                  href="/features"
+                  className="hover:text-white transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Features
+                </Link>
+                <Link
+                  href="/faq"
+                  className="hover:text-white transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  FAQ
+                </Link>
+                <Link
+                  href="/privacy"
+                  className="hover:text-white transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Privacy
+                </Link>
+                 <a
+                    href="/pad/voicevpn.xml"
+                    className="hover:text-white transition-colors"
+                     onClick={() => setIsOpen(false)}
+                 >
+                     PAD File
+                 </a>
+              </div>
+
+              <div className="mt-4">
+                <DownloadLink
+                  className="px-8 py-3 rounded-full text-base font-semibold bg-[var(--brand-cyan)] text-white hover:bg-opacity-90 transition-all shadow-[0_0_20px_-5px_rgba(33,169,247,0.5)]"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Download APK
+                </DownloadLink>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </nav>
+  );
 }

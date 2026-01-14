@@ -1,40 +1,60 @@
-// app/page.jsx
-import Image from "next/image";
+import Hero from "./_components/sections/Hero";
+import Stats from "./_components/sections/Stats";
+import Features from "./_components/sections/Features";
+import Testimonials from "./_components/sections/Testimonials";
+import HowTo from "./_components/sections/HowTo";
+import CreditExplainer from "./_components/sections/CreditExplainer";
+import Faq from "./_components/sections/Faq";
 
 export default function Home() {
-  return (
-    <div
-      className="grid grid-rows-[auto_1fr_auto] items-center justify-items-center min-h-screen p-8 sm:p-20 gap-12 font-[family-name:var(--font-geist-sans)]"
-      style={{ backgroundColor: "#0B1426" }}
-    >
-      <main className="flex flex-col items-center text-center gap-6 row-start-2 max-w-xl">
-        <Image
-          src="/voice-vpn.svg"
-          alt="Voice VPN app"
-          width={100}
-          height={100}
-          priority
-        />
-        <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">Voice VPN</h1>
-        <p className="text-sm sm:text-base text-gray-300">
-          Free, censorship-resistant VPN powered by a simple credit system. No sign-up. No tracking. Built for users who need privacy and unrestricted access worldwide.
-        </p>
-        <a
-          href="https://apk.voicevpn.top/latest.apk"
-          className="mt-4 bg-white text-black px-6 py-3 rounded-full hover:bg-gray-200 transition"
-        >
-          Download Latest APK
-        </a>
-        <p className="text-xs text-gray-400 mt-2">
-          Latest version: served directly from our own infrastructure.
-        </p>
-        <div className="flex gap-4">
-          <a href='https://voice-vpn-fast-vpn-free.en.uptodown.com/android' title='Download Voice VPN - Fast VPN (Free)' >
-            <img src='https://stc.utdstc.com/img/mediakit/download-aao-big.png' alt='Download Voice VPN - Fast VPN (Free)' /></a>
-        </div>
-      </main>
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://voice-vpn.com/#website",
+        url: "https://voice-vpn.com/",
+        name: "Voice VPN",
+      },
+      {
+        "@type": ["SoftwareApplication", "MobileApplication"],
+        "@id": "https://voice-vpn.com/#app",
+        name: "Voice VPN",
+        applicationCategory: "SecurityApplication",
+        operatingSystem: "Android",
+        description:
+          "Free, censorship‑resistant VPN for Android. No sign‑up, no activity logs, ad‑supported credits.",
+        downloadUrl: "https://apk.voicevpn.top/latest.apk",
+        offers: {
+          "@type": "Offer",
+          price: "0",
+          priceCurrency: "USD",
+          availability: "https://schema.org/InStock",
+        },
+        publisher: { "@type": "Organization", name: "Vasilkoff Ltd" },
+      },
+    ],
+  };
 
-      
-    </div>
+  return (
+    <main className="flex flex-col min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <Hero />
+      <Stats />
+      <Features />
+
+      <section id="how-it-works" className="py-20 bg-[var(--brand-dark)]/30">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <HowTo generateJsonLd />
+          <CreditExplainer />
+        </div>
+      </section>
+
+      <Testimonials />
+      <Faq generateJsonLd />
+    </main>
   );
 }

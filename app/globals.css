@@ -1,26 +1,74 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0B1426;
-  --foreground: #171717;
+  /* Brand Palette - Derived from voice-vpn.svg */
+  --brand-navy: #0B1426;     /* Main background */
+  --brand-dark: #051E37;     /* Logo dark blue / Depth */
+  --brand-cyan: #21A9F7;     /* Primary accent */
+  --brand-graphite: #4F647E; /* Secondary accent */
+  --brand-gray: #B1BBC2;     /* Body text */
+  --brand-meta: #50657E;     /* Meta/Muted text */
+
+  /* Semantic Map */
+  --background: var(--brand-navy);
+  --foreground: var(--brand-gray);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  
+  /* Expose Brand Colors to Tailwind */
+  --color-navy: var(--brand-navy);
+  --color-navy-dark: var(--brand-dark);
+  --color-cyan: var(--brand-cyan);
+  --color-graphite: var(--brand-graphite);
+  --color-gray-body: var(--brand-gray);
+  --color-gray-meta: var(--brand-meta);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
+/* Force specific Dark Theme behavior even for system preference */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: var(--brand-navy);
+    --foreground: var(--brand-gray);
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Base Styles */
+h1, h2, h3, h4, h5, h6 {
+  color: white;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+/* Utilities */
+.glass-card {
+  background-color: rgb(5 30 55 / 0.6); /* --brand-dark with opacity */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--brand-cyan) 0%, #ffffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+.glow-primary {
+  box-shadow: 0 0 30px -5px rgba(33, 169, 247, 0.4); /* --brand-cyan glow */
 }

@@ -1,7 +1,8 @@
 // app/_components/sections/DeviceCtaCard.jsx
 'use client';
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import QRCode from 'react-qr-code';
+import { useSearchParams } from 'next/navigation';
 
 function detectPlatform() {
   if (typeof navigator === 'undefined') return 'desktop';
@@ -13,15 +14,25 @@ function detectPlatform() {
 
 export default function DeviceCtaCard({
   refId,
-  shareUrl, // e.g. `https://voice-vpn.com/r/${refId}` for QR
+  shareUrl, 
   notSure = false,
   playUrl = 'https://play.google.com/store/apps/details?id=com.fast.voicevpn',
   uptodownUrl = 'https://voice-vpn-fast-vpn-free.en.uptodown.com/android',
   apkUrl = 'https://apk.voicevpn.top/latest.apk',
-  iosWaitlistUrl = '/ios-waitlist', // or mailto:
+  iosWaitlistUrl = '/ios-waitlist',
 }) {
   const [override, setOverride] = useState('');
   const platform = useMemo(() => override || detectPlatform(), [override]);
+  const searchParams = useSearchParams();
+
+  // Append UTMs to APK URL if available
+  const finalApkUrl = useMemo(() => {
+    if (searchParams && searchParams.toString()) {
+        const separator = apkUrl.includes("?") ? "&" : "?";
+        return `${apkUrl}${separator}${searchParams.toString()}`;
+    }
+    return apkUrl;
+  }, [apkUrl, searchParams]);
 
   const deepLink = refId ? `voicevpn://claim?ref=${refId}` : 'voicevpn://open';
   const storeUrl = platform === 'android' ? playUrl : iosWaitlistUrl;
@@ -35,6 +46,7 @@ export default function DeviceCtaCard({
       if (Date.now() - t < 1800) window.location.href = storeUrl;
     }, 800);
   };
+
 
   return (
     <section className="w-full">

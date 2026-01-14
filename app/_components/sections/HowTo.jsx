@@ -1,6 +1,4 @@
 // app/_components/sections/HowTo.jsx
-'use client';
-
 /**
  * HowTo — concise step list with optional JSON-LD.
  *
