@@ -1,5 +1,11 @@
 [
   {
+    "version": "3.1.4+314",
+    "date": "2026-01-15",
+    "apk": "https://apk.voicevpn.top/voicevpn-3.1.4+314.apk",
+    "notes": "• Improved connectivity algorithms to enhance stability and speed in low-network situations.\n• Resolved issues with VPN connection drops and disconnections.\n• Enhanced user interface for easier navigation and setup."
+  },
+  {
     "version": "3.0.3+303",
     "date": "2025-12-09",
     "apk": "https://apk.voicevpn.top/voicevpn-3.0.3+303.apk",
