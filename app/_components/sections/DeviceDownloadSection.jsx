@@ -1,4 +1,7 @@
 // app/_components/sections/DeviceDownloadSection.jsx
+import PlayStoreButton from "../utils/PlayStoreButton";
+import CyanButton from "../utils/CyanButton";
+
 export default function DeviceDownloadSection() {
   return (
     <section id="download" className="py-16 bg-[var(--brand-navy)]">
@@ -19,28 +22,21 @@ export default function DeviceDownloadSection() {
             </p>
 
             <div className="flex flex-wrap items-center gap-3">
-              <a
+              <CyanButton
                 href="https://apk.voicevpn.top/latest.apk"
-                className="inline-flex items-center justify-center rounded-full bg-[var(--brand-cyan)] px-4 py-2 text-sm font-semibold text-white hover:bg-opacity-90 transition-all"
+                className="rounded-lg px-4 py-2 text-sm font-semibold"
               >
                 Download APK (direct)
-              </a>
+              </CyanButton>
               <a
                 href="https://voice-vpn-fast-vpn-free.en.uptodown.com/android"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-full bg-white/5 px-4 py-2 text-sm font-semibold text-white ring-1 ring-white/15 hover:bg-white/10 transition"
+                className="inline-flex items-center justify-center rounded-lg bg-white/5 px-4 py-2 text-sm font-semibold text-white ring-1 ring-white/15 hover:bg-white/10 transition"
               >
                 Uptodown
               </a>
-              <a
-                href="https://play.google.com/store/apps/details?id=com.fast.voicevpn"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-full bg-white/5 px-4 py-2 text-sm font-semibold text-white ring-1 ring-white/15 hover:bg-white/10 transition"
-              >
-                Google Play
-              </a>
+              <PlayStoreButton />
             </div>
           </div>
 
@@ -51,7 +47,7 @@ export default function DeviceDownloadSection() {
             <button
               type="button"
               disabled
-              className="inline-flex items-center justify-center rounded-full bg-white/5 px-4 py-2 text-sm font-semibold text-white/40 ring-1 ring-white/10 cursor-not-allowed"
+              className="inline-flex items-center justify-center rounded-lg bg-white/5 px-4 py-2 text-sm font-semibold text-white/40 ring-1 ring-white/10 cursor-not-allowed"
               aria-disabled="true"
             >
               App Store (soon)
@@ -63,7 +59,7 @@ export default function DeviceDownloadSection() {
             <h3 className="text-base font-semibold text-white mb-1">macOS</h3>
             <p className="text-sm text-gray-300 mb-4">Coming soon.</p>
             <button
-              className="inline-flex items-center justify-center rounded-full bg-white/5 px-4 py-2 text-sm font-semibold text-white/40 ring-1 ring-white/10 cursor-not-allowed"
+              className="inline-flex items-center justify-center rounded-lg bg-white/5 px-4 py-2 text-sm font-semibold text-white/40 ring-1 ring-white/10 cursor-not-allowed"
               disabled
             >
               Download (soon)
@@ -75,7 +71,7 @@ export default function DeviceDownloadSection() {
             <h3 className="text-base font-semibold text-white mb-1">Windows</h3>
             <p className="text-sm text-gray-300 mb-4">Coming soon.</p>
             <button
-              className="inline-flex items-center justify-center rounded-full bg-white/5 px-4 py-2 text-sm font-semibold text-white/40 ring-1 ring-white/10 cursor-not-allowed"
+              className="inline-flex items-center justify-center rounded-lg bg-white/5 px-4 py-2 text-sm font-semibold text-white/40 ring-1 ring-white/10 cursor-not-allowed"
               disabled
             >
               Download (soon)
@@ -87,7 +83,7 @@ export default function DeviceDownloadSection() {
             <h3 className="text-base font-semibold text-white mb-1">Linux</h3>
             <p className="text-sm text-gray-300 mb-4">Coming soon.</p>
             <button
-              className="inline-flex items-center justify-center rounded-full bg-white/5 px-4 py-2 text-sm font-semibold text-white/40 ring-1 ring-white/10 cursor-not-allowed"
+              className="inline-flex items-center justify-center rounded-lg bg-white/5 px-4 py-2 text-sm font-semibold text-white/40 ring-1 ring-white/10 cursor-not-allowed"
               disabled
             >
               Download (soon)

@@ -1,6 +1,7 @@
-import Image from "next/image";
 import ScrollReveal from "../utils/ScrollReveal";
 import DownloadLink from "../utils/DownloadLink";
+import PlayStoreButton from "../utils/PlayStoreButton";
+import { ReleaseBadge, releaseInfo } from "../utils/releaseInfo";
 
 export default function Hero() {
   return (
@@ -14,11 +15,7 @@ export default function Hero() {
       <div className="relative z-10 max-w-5xl mx-auto px-6 flex flex-col items-center text-center">
         {/* Badge */}
         <ScrollReveal delay={0.1}>
-            <div className="mb-8 p-1 px-3 rounded-full border border-[var(--brand-cyan)]/30 bg-[var(--brand-cyan)]/10 backdrop-blur-sm">
-                <span className="text-xs font-mono text-[var(--brand-cyan)] uppercase tracking-wider">
-                    v0.1.0 Available Now
-                </span>
-            </div>
+            <ReleaseBadge className="mb-8" />
         </ScrollReveal>
 
         {/* Headline */}
@@ -39,22 +36,21 @@ export default function Hero() {
 
         {/* CTAs */}
         <ScrollReveal delay={0.4} className="w-full sm:w-auto">
-            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+          <div className="flex flex-col items-center sm:flex-row gap-4 w-full sm:w-auto">
+            <PlayStoreButton 
+              className="transition-transform hover:-translate-y-1" 
+              imgClass="h-[74px]" 
+            />
             <DownloadLink
-                className="flex items-center justify-center gap-2 px-8 py-4 rounded-full text-base font-bold bg-[var(--brand-cyan)] text-white hover:bg-opacity-90 transition-all glow-primary transform hover:-translate-y-1"
+              className="flex items-center justify-center gap-2 px-8 py-3 rounded-lg
+               text-base font-bold bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-all backdrop-blur-sm"
             >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                </svg>
-                Download APK
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+              Download APK
             </DownloadLink>
-            <a
-                href="#how-it-works"
-                className="flex items-center justify-center gap-2 px-8 py-4 rounded-full text-base font-bold bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-all backdrop-blur-sm"
-            >
-                Learn More
-            </a>
-            </div>
+          </div>
         </ScrollReveal>
 
         {/* Meta / Trust */}

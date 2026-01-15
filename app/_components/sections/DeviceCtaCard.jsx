@@ -3,6 +3,7 @@
 import { useMemo, useState, useEffect } from 'react';
 import QRCode from 'react-qr-code';
 import { useSearchParams } from 'next/navigation';
+import PlayStoreButton from '../utils/PlayStoreButton';
 
 function detectPlatform() {
   if (typeof navigator === 'undefined') return 'desktop';
@@ -83,21 +84,14 @@ export default function DeviceCtaCard({
             <>
               <button
                 onClick={onOpenInstall}
-                className="inline-flex items-center justify-center rounded-full bg-white text-black px-5 py-2.5 text-sm font-medium hover:bg-gray-200 transition"
+                className="inline-flex items-center justify-center rounded-lg bg-white text-black px-5 py-2.5 text-sm font-medium hover:bg-gray-200 transition"
               >
                 Open / Install
               </button>
-              <a
-                href={playUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-full bg-white/10 text-white px-5 py-2.5 text-sm font-medium hover:bg-white/20 ring-1 ring-white/15 transition"
-              >
-                Google Play
-              </a>
+              <PlayStoreButton 
               <a
                 href={apkUrl}
-                className="inline-flex items-center justify-center rounded-full bg-white/10 text-white px-5 py-2.5 text-sm font-medium hover:bg-white/20 ring-1 ring-white/15 transition"
+                className="inline-flex items-center justify-center rounded-lg bg-white/10 text-white px-5 py-2.5 text-sm font-medium hover:bg-white/20 ring-1 ring-white/15 transition"
               >
                 APK (direct)
               </a>
@@ -105,7 +99,7 @@ export default function DeviceCtaCard({
                 href={uptodownUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-full bg-white/10 text-white px-5 py-2.5 text-sm font-medium hover:bg-white/20 ring-1 ring-white/15 transition"
+                className="inline-flex items-center justify-center rounded-lg bg-white/10 text-white px-5 py-2.5 text-sm font-medium hover:bg-white/20 ring-1 ring-white/15 transition"
               >
                 Uptodown
               </a>
@@ -116,13 +110,13 @@ export default function DeviceCtaCard({
             <>
               <button
                 onClick={onOpenInstall}
-                className="inline-flex items-center justify-center rounded-full bg-white text-black px-5 py-2.5 text-sm font-medium hover:bg-gray-200 transition"
+                className="inline-flex items-center justify-center rounded-lg bg-white text-black px-5 py-2.5 text-sm font-medium hover:bg-gray-200 transition"
               >
                 Open App
               </button>
               <a
                 href={iosWaitlistUrl}
-                className="inline-flex items-center justify-center rounded-full bg-white/10 text-white px-5 py-2.5 text-sm font-medium hover:bg-white/20 ring-1 ring-white/15 transition"
+                className="inline-flex items-center justify-center rounded-lg bg-white/10 text-white px-5 py-2.5 text-sm font-medium hover:bg-white/20 ring-1 ring-white/15 transition"
               >
                 Join iOS Waitlist
               </a>
@@ -135,13 +129,13 @@ export default function DeviceCtaCard({
                 href={playUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-full bg-white text-black px-5 py-2.5 text-sm font-medium hover:bg-gray-200 transition"
+                className="inline-flex items-center justify-center rounded-lg bg-white text-black px-5 py-2.5 text-sm font-medium hover:bg-gray-200 transition"
               >
                 Google Play
               </a>
               <a
                 href={apkUrl}
-                className="inline-flex items-center justify-center rounded-full bg-white/10 text-white px-5 py-2.5 text-sm font-medium hover:bg-white/20 ring-1 ring-white/15 transition"
+                className="inline-flex items-center justify-center rounded-lg bg-white/10 text-white px-5 py-2.5 text-sm font-medium hover:bg-white/20 ring-1 ring-white/15 transition"
               >
                 APK (direct)
               </a>
@@ -149,7 +143,7 @@ export default function DeviceCtaCard({
                 href={uptodownUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-full bg-white/10 text-white px-5 py-2.5 text-sm font-medium hover:bg-white/20 ring-1 ring-white/15 transition"
+                className="inline-flex items-center justify-center rounded-lg bg-white/10 text-white px-5 py-2.5 text-sm font-medium hover:bg-white/20 ring-1 ring-white/15 transition"
               >
                 Uptodown
               </a>

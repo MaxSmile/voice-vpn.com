@@ -9,7 +9,8 @@ function DownloadLinkContent({
   className = "", 
   children,
   target,
-  rel
+  rel,
+  ...props
 }) {
   const searchParams = useSearchParams();
   const [finalHref, setFinalHref] = useState(href);
@@ -30,6 +31,7 @@ function DownloadLinkContent({
       className={className}
       target={target}
       rel={rel}
+      {...props}
     >
       {children}
     </a>
@@ -41,7 +43,8 @@ export default function DownloadLink({
   className = "", 
   children,
   target,
-  rel
+  rel,
+  ...props
 }) {
   return (
     <Suspense fallback={
@@ -50,6 +53,7 @@ export default function DownloadLink({
         className={className}
         target={target}
         rel={rel}
+        {...props}
       >
         {children}
       </a>
@@ -60,6 +64,7 @@ export default function DownloadLink({
         children={children}
         target={target}
         rel={rel}
+        {...props}
       />
     </Suspense>
   );

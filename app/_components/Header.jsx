@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import DownloadLink from "./utils/DownloadLink";
+import CyanButton from "./utils/CyanButton";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,11 +38,13 @@ export default function Header() {
 
         {/* Desktop CTA Right */}
         <div className="hidden md:flex items-center gap-4">
-          <DownloadLink
-            className="px-5 py-2 rounded-full text-sm font-semibold bg-[var(--brand-cyan)] text-white hover:bg-opacity-90 transition-all shadow-[0_0_20px_-5px_rgba(33,169,247,0.5)] hover:shadow-[0_0_25px_-5px_rgba(33,169,247,0.7)]"
+          <CyanButton
+            as={DownloadLink}
+            href="/downloads"
+            className="px-5 py-2 rounded-lg text-sm font-semibold shadow-[0_0_20px_-5px_rgba(33,169,247,0.5)] hover:shadow-[0_0_25px_-5px_rgba(33,169,247,0.7)]"
           >
-            Download APK
-          </DownloadLink>
+            Downloads
+          </CyanButton>
         </div>
 
         {/* Mobile Menu Button */}
@@ -117,12 +120,14 @@ export default function Header() {
               </div>
 
               <div className="mt-4">
-                <DownloadLink
-                  className="px-8 py-3 rounded-full text-base font-semibold bg-[var(--brand-cyan)] text-white hover:bg-opacity-90 transition-all shadow-[0_0_20px_-5px_rgba(33,169,247,0.5)]"
+                <CyanButton
+                  as={DownloadLink}
+                  href="/downloads"
+                  className="px-8 py-3 rounded-lg text-base font-semibold shadow-[0_0_20px_-5px_rgba(33,169,247,0.5)]"
                   onClick={() => setIsOpen(false)}
                 >
                   Download APK
-                </DownloadLink>
+                </CyanButton>
               </div>
             </motion.div>
           )}

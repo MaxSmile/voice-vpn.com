@@ -5,6 +5,8 @@ import Testimonials from "./_components/sections/Testimonials";
 import HowTo from "./_components/sections/HowTo";
 import CreditExplainer from "./_components/sections/CreditExplainer";
 import Faq from "./_components/sections/Faq";
+import { LatestReleaseNotes } from "./_components/utils/releaseInfo";
+import { FAQ_ITEMS } from "./_components/content/faqItems";
 
 export default function Home() {
   const jsonLd = {
@@ -54,7 +56,12 @@ export default function Home() {
       </section>
 
       <Testimonials />
-      <Faq generateJsonLd />
+      <Faq items={FAQ_ITEMS} limit={4} showReadMore generateJsonLd />
+      <section className="py-20 bg-[var(--brand-dark)]/30">
+        <div className="max-w-4xl mx-auto px-6">
+          <LatestReleaseNotes />
+        </div>
+      </section>
     </main>
   );
 }
