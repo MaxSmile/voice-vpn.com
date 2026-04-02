@@ -1,0 +1,24 @@
+# app-ads.txt for com.fast.voicevpn
+# CAS.ai mediation — VPN-Compliant adapter set
+# Full verified list available in CAS Dashboard → Settings → App-ads.txt
+# After registering at https://cas.ai, download the generated file and replace this one.
+
+# IronSource
+ironSource.com, 1, DIRECT
+
+# Unity Ads
+unity.com, 1078, RESELLER
+unity.com, 4143559, DIRECT
+
+# AppLovin
+applovin.com, b0b68c0b08b72e94de7d35fb7d0a4daa, RESELLER
+
+# Mintegral / Mobvista
+mintegral.com, 210990, DIRECT
+mintegral.com, 210990, RESELLER
+
+# Bigo Ads / YY
+bigossp.com, 1069, DIRECT
+
+# CAS.ai network
+cleveradssolutions.com, 1, DIRECT
