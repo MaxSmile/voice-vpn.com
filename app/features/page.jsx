@@ -4,13 +4,15 @@ import Features from "../_components/sections/Features";
 import DownloadLink from "../_components/utils/DownloadLink";
 import PlayStoreButton from "../_components/utils/PlayStoreButton";
 import { releaseInfo } from "../_components/utils/releaseInfo";
+import { buildPageMetadata } from "../_lib/metadata";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Features",
   description:
     "Voice VPN features explained simply: one-tap connect, smart server selection, live speed/usage visibility, transparent credits, referrals, and in-app support.",
-  alternates: { canonical: "/features" },
-};
+  path: "/features",
+  imageAlt: "Voice VPN features page social preview",
+});
 
 export default function FeaturesPage() {
   const highlights = [

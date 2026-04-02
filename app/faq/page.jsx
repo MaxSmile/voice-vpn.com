@@ -1,13 +1,15 @@
 import Link from "next/link";
 
 import { FAQ_SEO_ITEMS } from "../_components/content/faqSeoItems";
+import { buildPageMetadata } from "../_lib/metadata";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "FAQ",
   description:
     "Voice VPN FAQ: popular VPN questions answered simply—privacy, logs, speeds, censored networks, credits, downloads, and safety.",
-  alternates: { canonical: "/faq" },
-};
+  path: "/faq",
+  imageAlt: "Voice VPN FAQ page social preview",
+});
 
 export default function FaqPage() {
   const jsonLd = JSON.stringify({

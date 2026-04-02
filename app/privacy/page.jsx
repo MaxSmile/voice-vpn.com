@@ -1,11 +1,13 @@
 import Link from "next/link";
+import { buildPageMetadata } from "../_lib/metadata";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Privacy",
   description:
     "How Voice VPN handles data on this website and in the app, including what we collect, why, and your choices.",
-  alternates: { canonical: "/privacy" },
-};
+  path: "/privacy",
+  imageAlt: "Voice VPN privacy page social preview",
+});
 
 export default function PrivacyPage() {
   return (

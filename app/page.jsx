@@ -7,6 +7,15 @@ import CreditExplainer from "./_components/sections/CreditExplainer";
 import Faq from "./_components/sections/Faq";
 import { LatestReleaseNotes } from "./_components/utils/releaseInfo";
 import { FAQ_ITEMS } from "./_components/content/faqItems";
+import { buildPageMetadata } from "./_lib/metadata";
+
+export const metadata = buildPageMetadata({
+  title: "Voice VPN — Censorship‑Resistant VPN (Free Android APK)",
+  description:
+    "Free, censorship‑resistant VPN for Android. No sign‑up, no activity logs, ad‑supported credits. Download the latest Voice VPN APK.",
+  path: "/",
+  imageAlt: "Voice VPN home page social preview",
+});
 
 export default function Home() {
   const jsonLd = {

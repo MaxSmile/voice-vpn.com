@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from "./_components/Footer";
 import Header from "./_components/Header";
+import { BASE_URL, SITE_NAME } from "./_lib/metadata";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,38 +16,21 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://voice-vpn.com"),
+  metadataBase: new URL(BASE_URL),
   title: {
     default: "Voice VPN — Censorship‑Resistant VPN (Free Android APK)",
     template: "%s — Voice VPN",
   },
   description:
     "Free, censorship‑resistant VPN for Android. No sign‑up, no activity logs, ad‑supported credits. Download the latest Voice VPN APK.",
-  alternates: { canonical: "/" },
   manifest: "/manifest.json",
   openGraph: {
-    title: "Voice VPN — Censorship‑Resistant VPN (Free Android APK)",
-    description:
-      "Free, censorship‑resistant VPN for Android. No sign‑up, no activity logs, ad‑supported credits. Download the latest Voice VPN APK.",
-    url: "/",
-    siteName: "Voice VPN",
+    siteName: SITE_NAME,
     locale: "en_US",
     type: "website",
-    images: [
-      {
-        url: "/og/voice-vpn-og.png",
-        width: 1200,
-        height: 630,
-        alt: "Voice VPN — censorship‑resistant VPN for Android",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Voice VPN — Censorship‑Resistant VPN (Free Android APK)",
-    description:
-      "Free, censorship‑resistant VPN for Android. No sign‑up, no activity logs, ad‑supported credits. Download the latest Voice VPN APK.",
-    images: ["/og/voice-vpn-og.png"],
   },
 };
 

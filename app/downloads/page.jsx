@@ -4,13 +4,15 @@ import DownloadLink from "../_components/utils/DownloadLink";
 import PlayStoreButton from "../_components/utils/PlayStoreButton";
 import CyanButton from "../_components/utils/CyanButton";
 import { LatestReleaseNotes, releaseInfo } from "../_components/utils/releaseInfo";
+import { buildPageMetadata } from "../_lib/metadata";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Downloads",
   description:
     "Download Voice VPN from Google Play or direct APK, read release notes, join the Telegram support group, and view the product roadmap.",
-  alternates: { canonical: "/downloads" },
-};
+  path: "/downloads",
+  imageAlt: "Voice VPN downloads page social preview",
+});
 
 export default function DownloadsPage() {
   return (
