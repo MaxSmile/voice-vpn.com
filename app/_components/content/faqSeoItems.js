@@ -10,10 +10,10 @@ export const FAQ_SEO_ITEMS = [
   },
   {
     id: "censored-regions",
-    q: "Does it work in censored regions (UAE, China, Iran)?",
+    q: "Does it work on restricted networks?",
     a: [
-      "Voice VPN is built for difficult networks. Some countries and networks use deep traffic inspection to detect and block VPNs, so “works everywhere forever” is not realistic for any VPN.",
-      "What Voice VPN tries to do is blend in with normal web traffic so it’s harder to identify and block. In practice, results can vary by region, ISP, and even by the Wi‑Fi you’re on.",
+      "Voice VPN is built for networks with strong privacy and security requirements. Some countries and networks use advanced traffic inspection, so 'works everywhere forever' is not realistic for any VPN.",
+      "What Voice VPN does is use advanced encryption to secure your connection and help you maintain privacy on challenging networks. In practice, results can vary by region, ISP, and even by the Wi‑Fi you're on.",
       "If you have trouble connecting, the simplest fixes are: reconnect once, switch servers/regions, or try again later (network rules can change throughout the day).",
     ],
   },
@@ -41,7 +41,7 @@ export const FAQ_SEO_ITEMS = [
     a: [
       "A VPN is a protected tunnel for your internet.",
       "Normally, your device talks directly to websites and apps through your ISP or Wi‑Fi provider. With a VPN, your device connects to a VPN server first, and then the VPN server connects to the internet for you.",
-      "This helps on public Wi‑Fi (it’s harder for the local network to spy on your traffic) and can help bypass some network blocks.",
+      "This helps on public Wi‑Fi (it's harder for the local network to spy on your traffic) and provides encryption for your data.",
     ],
   },
   {
@@ -82,11 +82,11 @@ export const FAQ_SEO_ITEMS = [
   },
   {
     id: "school-work-blocks",
-    q: "Will Voice VPN bypass school/work blocks?",
+    q: "Will Voice VPN help on restricted school or work networks?",
     a: [
-      "Sometimes. It depends on how the network blocks traffic and how aggressive it is.",
-      "Some networks only block a list of websites; a VPN can usually help. Other networks detect and block VPN patterns; that can be harder.",
-      "Voice VPN focuses on censorship resistance, but no VPN can guarantee success on every managed network.",
+      "Sometimes. It depends on how the network is configured and how actively it's managed.",
+      "Some networks have standard restrictions that encryption-based connectivity can help navigate. Other networks use advanced detection and policy enforcement; that can be harder.",
+      "Voice VPN uses advanced encryption for secure connections, but no VPN can guarantee success on every managed network.",
     ],
   },
   {
@@ -111,8 +111,8 @@ export const FAQ_SEO_ITEMS = [
     id: "streaming",
     q: "Will it work with streaming apps?",
     a: [
-      "Streaming services often try to block VPNs. That means streaming compatibility can change over time.",
-      "Voice VPN is designed for reliable access and censorship resistance. If streaming is your top goal, test your specific service and region, because results vary.",
+      "Streaming services often try to block VPNs. That means compatibility can change over time.",
+      "Voice VPN is designed for secure, encrypted connections and privacy. If streaming is your top goal, test your specific service and region, because results vary.",
       "If something stops working, switching servers/regions can sometimes help.",
     ],
   },

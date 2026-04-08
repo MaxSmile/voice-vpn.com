@@ -18,11 +18,11 @@ const geistMono = Geist_Mono({
 export const metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "Voice VPN — Censorship‑Resistant VPN (Free Android APK)",
+    default: "Voice VPN — Secure VPN for Privacy & Encryption (Free Android APK)",
     template: "%s — Voice VPN",
   },
   description:
-    "Free, censorship‑resistant VPN for Android. No sign‑up, no activity logs, ad‑supported credits. Download the latest Voice VPN APK.",
+    "Free VPN for Android with end-to-end encryption and privacy protection. No sign-up, no activity logs, ad-supported. Download the latest Voice VPN APK.",
   manifest: "/manifest.json",
   openGraph: {
     siteName: SITE_NAME,

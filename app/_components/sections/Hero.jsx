@@ -21,7 +21,7 @@ export default function Hero() {
         {/* Headline */}
         <ScrollReveal delay={0.2}>
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white mb-6">
-            Unblock the World with <br className="hidden sm:block" />
+            Secure Your Connection with <br className="hidden sm:block" />
             <span className="text-gradient">Voice VPN</span>
             </h1>
         </ScrollReveal>
@@ -29,8 +29,8 @@ export default function Hero() {
         {/* Subhead */}
         <ScrollReveal delay={0.3}>
             <p className="text-lg sm:text-xl text-[var(--brand-gray)] max-w-2xl mb-10 leading-relaxed">
-            The lightweight, censorship-resistant VPN that blends in with normal traffic. 
-            No sign-up. No tracking. Just open internet.
+            The lightweight VPN for privacy and security. End-to-end encrypted connections with no sign-up required. 
+            Protect your data anywhere you connect.
             </p>
         </ScrollReveal>
 

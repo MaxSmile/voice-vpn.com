@@ -3,8 +3,8 @@ import ScrollReveal from "../utils/ScrollReveal";
 export default function Features() {
   const features = [
     {
-      title: "Censorship Resistant",
-      desc: "Built on the XRay Reality protocol to bypass Deep Packet Inspection (DPI) in restrictive regions like the UAE, China, and Iran. We blend in with normal web traffic.",
+      title: "Private & Encrypted",
+      desc: "Built on XRay Reality protocol for encrypted connections on restricted networks. Your traffic appears as normal web activity, protecting your privacy and data integrity.",
       icon: (
         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
@@ -37,10 +37,10 @@ export default function Features() {
         <ScrollReveal>
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-              Engineered for <span className="text-[var(--brand-cyan)]">Freedom</span>
+              Engineered for <span className="text-[var(--brand-cyan)]">Privacy</span>
             </h2>
             <p className="text-[var(--brand-gray)] max-w-2xl mx-auto">
-              Advanced technology meets simple usability. Voice VPN is built to keep you connected when others fail.
+              Advanced encryption technology with simple usability. Voice VPN is built for secure, private connections when you need them most.
             </p>
           </div>
         </ScrollReveal>

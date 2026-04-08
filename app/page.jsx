@@ -10,9 +10,9 @@ import { FAQ_ITEMS } from "./_components/content/faqItems";
 import { buildPageMetadata } from "./_lib/metadata";
 
 export const metadata = buildPageMetadata({
-  title: "Voice VPN — Censorship‑Resistant VPN (Free Android APK)",
+  title: "Voice VPN — Secure VPN for Privacy & Encryption (Free Android APK)",
   description:
-    "Free, censorship‑resistant VPN for Android. No sign‑up, no activity logs, ad‑supported credits. Download the latest Voice VPN APK.",
+    "Free VPN for Android with end-to-end encryption and privacy protection. No sign-up, no activity logs, ad-supported credits. Download Voice VPN APK.",
   path: "/",
   imageAlt: "Voice VPN home page social preview",
 });
@@ -34,7 +34,7 @@ export default function Home() {
         applicationCategory: "SecurityApplication",
         operatingSystem: "Android",
         description:
-          "Free, censorship‑resistant VPN for Android. No sign‑up, no activity logs, ad‑supported credits.",
+          "Free VPN for Android with end-to-end encryption and privacy protection. No sign-up, no activity logs, ad-supported credits.",
         downloadUrl: "https://apk.voicevpn.top/latest.apk",
         offers: {
           "@type": "Offer",

@@ -6,8 +6,8 @@ export const FAQ_ITEMS = [
   },
   {
     id: "censored-regions",
-    q: "Does it work in censored regions (UAE, China, Iran)?",
-    a: "Voice VPN is built to stay usable on restrictive networks by blending in with normal traffic. Results can vary by network; if it slows down, reconnect once or try a different server/region.",
+    q: "Does it work on restricted networks?",
+    a: "Voice VPN uses encryption to secure your connection on networks with restrictions. Results can vary by network; if it slows down, reconnect once or try a different server/region.",
   },
   {
     id: "signup-and-logs",
@@ -22,7 +22,7 @@ export const FAQ_ITEMS = [
   {
     id: "what-is-a-vpn",
     q: "What is a VPN (in simple words)?",
-    a: "A VPN is like a protected tunnel for your internet. Your device connects to a VPN server first, then your traffic goes out from there—helping protect you on public Wi‑Fi and bypass some blocks.",
+    a: "A VPN is like a protected tunnel for your internet. Your device connects to a VPN server first, then your traffic goes out from there—helping protect you on public Wi‑Fi with encryption and privacy.",
   },
   {
     id: "does-vpn-make-anonymous",
@@ -46,8 +46,8 @@ export const FAQ_ITEMS = [
   },
   {
     id: "school-work-blocks",
-    q: "Will Voice VPN bypass school/work blocks?",
-    a: "Sometimes. It depends on how the network blocks traffic. Voice VPN is designed to work where many VPNs fail, but some networks can still block or degrade VPN connections.",
+    q: "Will Voice VPN help on restricted school or work networks?",
+    a: "Sometimes. It depends on how the network is configured. Voice VPN uses advanced encryption to establish secure connections on challenging networks, but some network policies may still prevent VPN usage.",
   },
   {
     id: "speed-impact",
