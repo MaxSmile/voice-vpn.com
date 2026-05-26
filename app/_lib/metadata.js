@@ -1,5 +1,7 @@
 export const BASE_URL = "https://voice-vpn.com";
 export const SITE_NAME = "Voice VPN";
+export const DEFAULT_OG_IMAGE_PATH = "/og-images/home.jpg";
+export const DEFAULT_OG_IMAGE_URL = `${BASE_URL}${DEFAULT_OG_IMAGE_PATH}`;
 
 function sanitizeOgKey(value) {
   return value
@@ -58,6 +60,7 @@ export function buildPageMetadata({
           url: imageUrl,
           width: 1200,
           height: 630,
+          type: "image/jpeg",
           alt: imageAlt ?? title,
         },
       ],

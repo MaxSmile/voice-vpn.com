@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from "./_components/Footer";
 import Header from "./_components/Header";
-import { BASE_URL, SITE_NAME } from "./_lib/metadata";
+import { BASE_URL, DEFAULT_OG_IMAGE_URL, SITE_NAME } from "./_lib/metadata";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,12 +25,29 @@ export const metadata = {
     "Free VPN for Android with end-to-end encryption and privacy protection. No sign-up, no activity logs, ad-supported. Download the latest Voice VPN APK.",
   manifest: "/manifest.json",
   openGraph: {
+    title: "Voice VPN — Secure VPN for Privacy & Encryption",
+    description:
+      "Free VPN for Android with end-to-end encryption and privacy protection. No sign-up, no activity logs, ad-supported.",
+    url: BASE_URL,
     siteName: SITE_NAME,
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: DEFAULT_OG_IMAGE_URL,
+        width: 1200,
+        height: 630,
+        type: "image/jpeg",
+        alt: "Voice VPN social preview",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
+    title: "Voice VPN — Secure VPN for Privacy & Encryption",
+    description:
+      "Free VPN for Android with end-to-end encryption and privacy protection. No sign-up, no activity logs, ad-supported.",
+    images: [DEFAULT_OG_IMAGE_URL],
   },
 };
 
